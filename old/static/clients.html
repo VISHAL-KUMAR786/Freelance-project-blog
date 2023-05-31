@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Client Page</title>
+
+	<link rel="shortcut icon" href="../images/sunny-outline.svg" type="image/x-icon">
+	
+	<!-- css file -->
+	<link rel="stylesheet" href="../design/index.css">
+	<link rel="stylesheet" href="../design/home.css">
+	<link rel="stylesheet" href="../design/client.css">
+
+
+	<!-- cdn -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+		integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+	<!-- video js -->
+	<link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet" />
+
+	<!-- CSS flikity cdn -->
+	<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
+</head>
+
+<body>
+
+
+	<!-- social media icon -->
+
+	<div class="social__media_icon">
+
+		<div>
+			<a href="https://github.com/vishal-kumar786">
+				<img src="../images/social_media/icons8-facebook.svg" alt="">
+			</a>
+		</div>
+
+		<div>
+			<a href="https://github.com/vishal-kumar786">
+				<img src="../images/social_media/icons8-instagram.svg" alt="">
+			</a>
+		</div>
+
+		<div>
+			<a href="https://github.com/vishal-kumar786">
+				<img src="../images/social_media/icons8-linkedin-circled.svg" alt="">
+			</a>
+		</div>
+		<div>
+			<a href="https://github.com/vishal-kumar786">
+				<img src="../images/social_media/icons8-twitter.svg" alt="">
+			</a>
+		</div>
+		<div>
+			<a href="https://github.com/vishal-kumar786">
+				<img src="../images/social_media/icons8-youtube.svg" alt="">
+			</a>
+		</div>
+
+	</div>
+
+	<!-- Header Section  -->
+
+	<Header>
+
+		<div class="header__wrapper">
+
+			<div class="logo__container">
+				<a href="/">
+					<img src="../images/logo.png" alt="">
+				</a>
+			</div>
+
+			<div class="content__container">
+				<div class="location__container">
+					<div class="location__logo">
+						<img src="../images/icons8-location-40.png" alt="">
+					</div>
+					<div class="location__content">
+						<small>13, Big Smart Str, 2nd Cross</small>
+						<p>Newyork, USA 1002.</p>
+					</div>
+				</div>
+
+				<div class="mail__container">
+					<div class="mail__logo">
+						<img src="../images/icons8-gmail-login-40.png" alt="">
+					</div>
+					<div class="mail__content">
+						<small>1-800-784-533 & 544</small>
+						<p>Machinery@Support.Com</p>
+					</div>
+				</div>
+
+				<div class="social__container">
+
+					<div>
+						<a href="https://github.com/vishal-kumar786">
+							<img src="../images/social_media/icons8-facebook.svg" alt="">
+						</a>
+					</div>
+
+					<div>
+						<a href="https://github.com/vishal-kumar786">
+							<img src="../images/social_media/icons8-instagram.svg" alt="">
+						</a>
+					</div>
+
+					<div>
+						<a href="https://github.com/vishal-kumar786">
+							<img src="../images/social_media/icons8-linkedin-circled.svg" alt="">
+						</a>
+					</div>
+					<div>
+						<a href="https://github.com/vishal-kumar786">
+							<img src="../images/social_media/icons8-twitter.svg" alt="">
+						</a>
+					</div>
+					<div>
+						<a href="https://github.com/vishal-kumar786">
+							<img src="../images/social_media/icons8-youtube.svg" alt="">
+						</a>
+					</div>
+
+				</div>
+
+
+			</div>
+
+		</div>
+
+	</Header>
+
+
+	<!-- shader -->
+	<div class="shader"></div>
+
+	<!-- Navbar section start here -->
+	<nav id="navbar" class="sticky">
+		<div class="menu-icon">
+			<span>
+				<img src="../images/icons8-menu.svg" alt="">
+			</span>
+		</div>
+		<a class="logo" href="../index.html">
+			<div class="logo">
+				CraneCare <span>.</span>
+			</div>
+		</a>
+		<div class="nav-items">
+			<li><a href="../index.html">Home</a></li>
+			<li><a href="./about.html">About</a></li>
+			<li><a href="./services.html">Service</a></li>
+			<li><a href="./industries.html">Industries</a></li>
+			<li><a href="./clients.html">Client</a></li>
+			<li><a href="./contact.html">Contact</a></li>
+		</div>
+	</nav>
+
+	<script>
+		const menuBtn = document.querySelector(".menu-icon span");
+		const hanburger = document.querySelectorAll('.menu-icon')[0];
+		const items = document.querySelector(".nav-items");
+		const form = document.querySelector("form");
+		const image = document.querySelector(".menu-icon span img");
+		const header = document.querySelector("Header")
+		const nav = document.querySelector("nav")
+
+		let counter = 0;
+
+		menuBtn.onclick = () => {
+			items.classList.toggle("active");
+			hanburger.classList.toggle("close");
+
+			const attr = document.createAttribute("src");
+
+			counter += 1;
+			if (counter % 2 == 1) {
+				attr.value = "../images/icons8-multiply-40.png"
+				// console.log(h);
+				header.style.display = "none"
+				nav.style.position = 'fixed'
+				nav.style.top = '0%'
+				nav.style.left = '0%'
+
+			}
+			else {
+				attr.value = `../images/icons8-menu.svg`
+				header.style.display = "block"
+				nav.style.position = 'sticky'
+			}
+
+			image.setAttributeNode(attr)
+		}
+
+		window.onscroll = function () {
+			myFunction()
+		};
+
+		var navbar = document.getElementById("navbar");
+		var sticky = navbar.offsetTop;
+
+		function myFunction() {
+			if (window.pageYOffset >= sticky) {
+				navbar.classList.add("sticky")
+			} else {
+				navbar.classList.remove("sticky");
+			}
+		}
+	</script>
+
+	<!-- welcome banner -->
+
+	<div class="welcome-banner">
+		<div class="welcome-wrapper">
+			<div class="welcome-content">
+				<h2>“Many of life’s failures are people who did not realize how close they were to success when they
+					gave up.”</h2>
+				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem, quisquam.</p>
+				<button href="#" class="welcome-btn">
+					Read More
+				</button>
+			</div>
+		</div>
+	</div>
+
+	
+	<!-- feedback -->
+	<section id="box" style="padding: 3rem 0 5rem 0;">
+        <div class="heading">
+            <span>Feedback</span>
+            <h1>clients says</h1>
+        </div>
+
+        <div class="container">
+
+            <!-- box -->
+            <div class="box">
+                <div class="box-top">
+                    <div class="profile">
+                        <div class="profile-img">
+                            <img src="../images/feedback/c-1.jpg" alt="">
+                        </div>
+                        <div class="name-user">
+                            <strong>Touseeq Ijaz</strong>
+                            <span>@subscribeToSasteCoder</span>
+                        </div>
+                    </div>
+                    <div class="reviews">
+						<img src="../images/client/star-solid.svg" alt="">
+						<img src="../images/client/star-solid.svg" alt="">
+						<img src="../images/client/star-solid.svg" alt="">
+						<img src="../images/client/star-solid.svg" alt="">
+						<img src="../images/client/star-regular.svg" alt="">
+                    </div>
+                </div>
+                <div class="comment">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates ullam reiciendis perferendis
+                        a. Numquam facilis assumenda possimus voluptatibus ipsa quo suscipit nostrum consectetur nihil,
+                        autem quisquam! Sed quae culpa et.</p>
+                </div>
+            </div>
+            <!-- box -->
+            <div class="box">
+                <div class="box-top">
+                    <div class="profile">
+                        <div class="profile-img">
+                            <img src="../images/feedback/c-2.jpg" alt="">
+                        </div>
+                        <div class="name-user">
+                            <strong>Touseeq Ijaz</strong>
+                            <span>@subscribeToSasteCoder</span>
+                        </div>
+                    </div>
+                    <div class="reviews">
+						<img src="../images/client/star-solid.svg" alt="">
+						<img src="../images/client/star-solid.svg" alt="">
+						<img src="../images/client/star-solid.svg" alt="">
+						<img src="../images/client/star-solid.svg" alt="">
+						<img src="../images/client/star-regular.svg" alt="">
+                    </div>
+                </div>
+                <div class="comment">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates ullam reiciendis perferendis
+                        a. Numquam facilis assumenda possimus voluptatibus ipsa quo suscipit nostrum consectetur nihil,
+                        autem quisquam! Sed quae culpa et.</p>
+                </div>
+            </div>
+
+            <!-- box -->
+            <div class="box">
+                <div class="box-top">
+                    <div class="profile">
+                        <div class="profile-img">
+                            <img src="../images/feedback/c-3.jpg" alt="">
+                        </div>
+                        <div class="name-user">
+                            <strong>Touseeq Ijaz</strong>
+                            <span>@subscribeToSasteCoder</span>
+                        </div>
+                    </div>
+                    <div class="reviews">
+						<img src="../images/client/star-solid.svg" alt="">
+						<img src="../images/client/star-solid.svg" alt="">
+						<img src="../images/client/star-solid.svg" alt="">
+						<img src="../images/client/star-solid.svg" alt="">
+						<img src="../images/client/star-regular.svg" alt="">
+                    </div>
+                </div>
+                <div class="comment">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates ullam reiciendis perferendis
+                        a. Numquam facilis assumenda possimus voluptatibus ipsa quo suscipit nostrum consectetur nihil,
+                        autem quisquam! Sed quae culpa et.</p>
+                </div>
+            </div>
+            <!-- box -->
+            <div class="box">
+                <div class="box-top">
+                    <div class="profile">
+                        <div class="profile-img">
+                            <img src="../images/feedback/c-4.jpg" alt="">
+                        </div>
+                        <div class="name-user">
+                            <strong>Touseeq Ijaz</strong>
+                            <span>@subscribeToSasteCoder</span>
+                        </div>
+                    </div>
+                    <div class="reviews">
+						<img src="../images/client/star-solid.svg" alt="">
+						<img src="../images/client/star-solid.svg" alt="">
+						<img src="../images/client/star-solid.svg" alt="">
+						<img src="../images/client/star-solid.svg" alt="">
+						<img src="../images/client/star-regular.svg" alt="">
+                    </div>
+                </div>
+                <div class="comment">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates ullam reiciendis perferendis
+                        a. Numquam facilis assumenda possimus voluptatibus ipsa quo suscipit nostrum consectetur nihil,
+                        autem quisquam! Sed quae culpa et.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+	<!-- client testimonial -->
+	<div class="client_testimonial">
+		<div class="client_testimonial__wrapper">
+
+			<div class="text-center">
+				<h2>Regular Client</h2>
+			</div>
+
+			<div class="client_grid_box">
+				<div class="small_card">
+					<img src="../images/client/client-1.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-10.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-12.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-11.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-13.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-14.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-15.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-16.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-17.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-18.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-19.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-2.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-21.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-22.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-23.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-24.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-25.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-26.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-27.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-28.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-29.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-3.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-30.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-20.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-31.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-32.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-33.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-34.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-35.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-36.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-37.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-38.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-39.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-39.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-4.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-40.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-41.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-42.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-43.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-44.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-45.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-46.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-47.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-48.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-49.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-5.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-50.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-51.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-52.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-53.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-54.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-55.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-56.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-57.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-58.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-59.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-6.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-60.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-61.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-62.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-63.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-64.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-65.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-66.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-67.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-68.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-69.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-7.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-70.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-71.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-72.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-73.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-74.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-75.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-76.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-77.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-78.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-79.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-8.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-80.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-81.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-82.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-83.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-84.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-85.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-86.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-87.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-88.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-89.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-9.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-90.jpg" alt="">
+				</div>
+				<div class="small_card">
+					<img src="../images/client/client-91.jpg" alt="">
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+
+	<!-- footer section  -->
+	<footer>
+		<div class="footer-wrapper">
+			<div class="footer1">
+				<div class="wide-box">
+
+					<div class="logo">
+						<a href="#">
+							CraneCare<span style="color: #ff3d00;">.</span>
+						</a>
+					</div>
+
+					<a href="#">
+						<p>© 2022 Care.</p>
+						<p>All Rights Reserved</p>
+					</a>
+
+				</div>
+				<div class="equal-box">
+					<h2>Company</h2>
+					<a href="#">Home</a>
+					<a href="#">About</a>
+					<a href="#">Service</a>
+					<a href="#">Industries</a>
+					<a href="#">Client</a>
+					<a href="#">Contact</a>
+					<a href="#">help</a>
+				</div>
+				<div class="equal-box">
+					<h2>Contact</h2>
+					<a href="#">4967 Sardis Sta,</a>
+					<a href="#">Victoria 8007, Montreal.</a>
+					<a href="#">support@artstudio.com</a>
+				</div>
+				<div class="equal-box">
+
+					<h2>More</h2>
+					<a href="#">destination</a>
+					<a href="#">venue</a>
+					<a href="#">trip</a>
+
+				</div>
+				<div class="wide-box">
+
+					<div class="social-media-icon">
+
+						<a href="#">
+							<img src="../images/social_media/icons8-facebook.svg" alt="">
+						</a>
+
+						<a href="#">
+							<img src="../images/social_media/icons8-twitter.svg" alt="">
+						</a>
+
+						<a href="#">
+							<img src="../images/social_media/icons8-instagram.svg" alt="">
+						</a>
+
+
+						<a href="#">
+							<img src="../images/social_media/icons8-youtube.svg" alt="">
+						</a>
+
+						<a href="#">
+							<img src="../images/social_media/icons8-linkedin-circled.svg" alt="">
+						</a>
+
+					</div>
+
+					<p>we are present on these platform.</p>
+
+				</div>
+			</div>
+			<div class="footer2" style="margin-bottom: 1rem;">
+				Copyright © 2022 vishal kumar . All Right Reserved .
+			</div>
+		</div>
+	</footer>
+
+
+
+	<!-- JavaScript video js-->
+	<script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
+	<!-- <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+
+	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule="" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

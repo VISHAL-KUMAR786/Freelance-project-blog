@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Contact Page</title>
+
+	<link rel="shortcut icon" href="../images/sunny-outline.svg" type="image/x-icon">
+
+	<!-- css file -->
+	<link rel="stylesheet" href="../design/index.css">
+	<link rel="stylesheet" href="../design/home.css">
+	<link rel="stylesheet" href="../design/contact.css">
+
+	<!-- cdn -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+		integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+	<!-- video js -->
+	<link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet" />
+
+	<!-- CSS flikity cdn -->
+	<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
+
+</head>
+
+<body>
+
+
+	<!-- social media icon -->
+
+	<div class="social__media_icon">
+
+		<div>
+			<a href="https://github.com/vishal-kumar786">
+				<img src="../images/social_media/icons8-facebook.svg" alt="">
+			</a>
+		</div>
+
+		<div>
+			<a href="https://github.com/vishal-kumar786">
+				<img src="../images/social_media/icons8-instagram.svg" alt="">
+			</a>
+		</div>
+
+		<div>
+			<a href="https://github.com/vishal-kumar786">
+				<img src="../images/social_media/icons8-linkedin-circled.svg" alt="">
+			</a>
+		</div>
+		<div>
+			<a href="https://github.com/vishal-kumar786">
+				<img src="../images/social_media/icons8-twitter.svg" alt="">
+			</a>
+		</div>
+		<div>
+			<a href="https://github.com/vishal-kumar786">
+				<img src="../images/social_media/icons8-youtube.svg" alt="">
+			</a>
+		</div>
+
+	</div>
+
+	<!-- Header Section  -->
+
+	<Header>
+
+		<div class="header__wrapper">
+
+			<div class="logo__container">
+				<a href="/">
+					<img src="../images/logo.png" alt="">
+				</a>
+			</div>
+
+			<div class="content__container">
+				<div class="location__container">
+					<div class="location__logo">
+						<img src="../images/icons8-location-40.png" alt="">
+					</div>
+					<div class="location__content">
+						<small>13, Big Smart Str, 2nd Cross</small>
+						<p>Newyork, USA 1002.</p>
+					</div>
+				</div>
+
+				<div class="mail__container">
+					<div class="mail__logo">
+						<img src="../images/icons8-gmail-login-40.png" alt="">
+					</div>
+					<div class="mail__content">
+						<small>1-800-784-533 & 544</small>
+						<p>Machinery@Support.Com</p>
+					</div>
+				</div>
+
+				<div class="social__container">
+
+					<div>
+						<a href="https://github.com/vishal-kumar786">
+							<img src="../images/social_media/icons8-facebook.svg" alt="">
+						</a>
+					</div>
+
+					<div>
+						<a href="https://github.com/vishal-kumar786">
+							<img src="../images/social_media/icons8-instagram.svg" alt="">
+						</a>
+					</div>
+
+					<div>
+						<a href="https://github.com/vishal-kumar786">
+							<img src="../images/social_media/icons8-linkedin-circled.svg" alt="">
+						</a>
+					</div>
+					<div>
+						<a href="https://github.com/vishal-kumar786">
+							<img src="../images/social_media/icons8-twitter.svg" alt="">
+						</a>
+					</div>
+					<div>
+						<a href="https://github.com/vishal-kumar786">
+							<img src="../images/social_media/icons8-youtube.svg" alt="">
+						</a>
+					</div>
+
+				</div>
+
+
+			</div>
+
+		</div>
+
+	</Header>
+
+
+	<!-- shader -->
+	<div class="shader"></div>
+
+	<!-- Navbar section start here -->
+	<nav id="navbar" class="sticky">
+		<div class="menu-icon">
+			<span>
+				<img src="../images/icons8-menu.svg" alt="">
+			</span>
+		</div>
+		<a class="logo" href="../index.html">
+			<div class="logo">
+				CraneCare <span>.</span>
+			</div>
+		</a>
+		<div class="nav-items">
+			<li><a href="../index.html">Home</a></li>
+			<li><a href="./about.html">About</a></li>
+			<li><a href="./services.html">Service</a></li>
+			<li><a href="./industries.html">Industries</a></li>
+			<li><a href="./clients.html">Client</a></li>
+			<li><a href="./contact.html">Contact</a></li>
+		</div>
+	</nav>
+
+	<script>
+		const menuBtn = document.querySelector(".menu-icon span");
+		const hanburger = document.querySelectorAll('.menu-icon')[0];
+		const items = document.querySelector(".nav-items");
+		const form = document.querySelector("form");
+		const image = document.querySelector(".menu-icon span img");
+		const header = document.querySelector("Header")
+		const nav = document.querySelector("nav")
+
+		let counter = 0;
+
+		menuBtn.onclick = () => {
+			items.classList.toggle("active");
+			hanburger.classList.toggle("close");
+
+			const attr = document.createAttribute("src");
+
+			counter += 1;
+			if (counter % 2 == 1) {
+				attr.value = "../images/icons8-multiply-40.png"
+				// console.log(h);
+				header.style.display = "none"
+				nav.style.position = 'fixed'
+				nav.style.top = '0%'
+				nav.style.left = '0%'
+
+			}
+			else {
+				attr.value = `../images/icons8-menu.svg`
+				header.style.display = "block"
+				nav.style.position = 'sticky'
+			}
+
+			image.setAttributeNode(attr)
+		}
+
+		window.onscroll = function () {
+			myFunction()
+		};
+
+		var navbar = document.getElementById("navbar");
+		var sticky = navbar.offsetTop;
+
+		function myFunction() {
+			if (window.pageYOffset >= sticky) {
+				navbar.classList.add("sticky")
+			} else {
+				navbar.classList.remove("sticky");
+			}
+		}
+	</script>
+
+	<!-- welcome banner -->
+
+	<div class="welcome-banner">
+		<div class="welcome-wrapper">
+			<div class="welcome-content">
+				<h2> "Strive not to be a success, but rather to be of value."</h2>
+				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem, quisquam.</p>
+				<button href="#" class="welcome-btn">
+					Read More
+				</button>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- contact form -->
+
+	<div class="contactUs" style="margin: 4rem 0;">
+        <div class="title">
+            <h2>Get in Touch</h2>
+        </div>
+        <div class="box1">
+
+            <!-- form box  -->
+            <div class="contact form">
+                <h2>Send a Message</h2>
+                <form action="#">
+                    <div class="formBox">
+
+                        <div class="row50">
+                            <div class="inputBox">
+                                <span>First Name</span>
+                                <input type="text" name="" placeholder="Vishal" id="">
+                            </div>
+                            <div class="inputBox">
+                                <span>Last Name</span>
+                                <input type="text" name="" placeholder="Kumar" id="">
+                            </div>
+                        </div>
+
+                        <div class="row50">
+                            <div class="inputBox">
+                                <span>Email</span>
+                                <input type="email" name="" placeholder="Vishal132@gmail.com" id="">
+                            </div>
+                            <div class="inputBox">
+                                <span>Moblie</span>
+                                <input type="text" name="" placeholder="+91 987 654 3210" id="">
+                            </div>
+                        </div>
+
+                        <div class="row100">
+                            <div class="inputBox">
+                                <span>Message</span>
+                                <textarea name="" placeholder="Write you message here...." id="" "=""></textarea>
+                            </div>
+                        </div>
+
+                        <div class=" row100">
+                            <div class="inputBox">
+                                <input type="submit" value="send">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- info box  -->
+            <div class="contact info">
+                <h2>Contact Info</h2>
+                <div class="inforBox">
+                    <div>
+                        <span>
+                            <ion-icon name="location" role="img" class="md hydrated" aria-label="location"></ion-icon>
+                        </span>
+                        <p>Saraswati vihar, Rohta Road,Meerut cantt, Uttar Pradesh <br> INDIA </p>
+                    </div>
+                    <div>
+                        <span>
+                            <ion-icon name="mail" role="img" class="md hydrated" aria-label="mail"></ion-icon>
+                        </span>
+                        <a href="mailto:vishal132@gmail.com">vishal132@gmail.com</a>
+                    </div>
+                    <div>
+                        <span>
+                            <ion-icon name="call" role="img" class="md hydrated" aria-label="call"></ion-icon>
+                        </span>
+                        <a href="tel:+917017094609">+91 987 654 3210</a>
+                    </div>
+                    <!-- all the social media links -->
+                    <ul class="sci">
+                        <li>
+                            <a href="#">
+                                <ion-icon name="logo-instagram" role="img" class="md hydrated" aria-label="logo instagram"></ion-icon>    
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <ion-icon name="logo-linkedin" role="img" class="md hydrated" aria-label="logo linkedin"></ion-icon>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <ion-icon name="logo-twitter" role="img" class="md hydrated" aria-label="logo twitter"></ion-icon>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <ion-icon name="logo-discord" role="img" class="md hydrated" aria-label="logo discord"></ion-icon>
+                            </a>
+                        </li>
+                        <!-- <li>
+                            <a href="#">
+                                <ion-icon name="logo-reddit"></ion-icon>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <ion-icon name="logo-stackoverflow"></ion-icon>
+                            </a>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+
+
+            <!-- map box  -->
+            <div class="contact map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3490.1785324851544!2d77.67463111459459!3d28.982080174926114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390c6435f74fcf0f%3A0xbc4d11603e4ce309!2sRohta%20Rd%20Flyover%2C%20Meerut%20Cantt%2C%20Meerut%2C%20Uttar%20Pradesh%20250001!5e0!3m2!1sen!2sin!4v1647367605951!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+
+
+	<!-- footer section  -->
+	<footer>
+		<div class="footer-wrapper">
+			<div class="footer1">
+				<div class="wide-box">
+
+					<div class="logo">
+						<a href="#">
+							CraneCare<span style="color: #ff3d00;">.</span>
+						</a>
+					</div>
+
+					<a href="#">
+						<p>© 2022 Care.</p>
+						<p>All Rights Reserved</p>
+					</a>
+
+				</div>
+				<div class="equal-box">
+					<h2>Company</h2>
+					<a href="#">Home</a>
+					<a href="#">About</a>
+					<a href="#">Service</a>
+					<a href="#">Industries</a>
+					<a href="#">Client</a>
+					<a href="#">Contact</a>
+					<a href="#">help</a>
+				</div>
+				<div class="equal-box">
+					<h2>Contact</h2>
+					<a href="#">4967 Sardis Sta,</a>
+					<a href="#">Victoria 8007, Montreal.</a>
+					<a href="#">support@artstudio.com</a>
+				</div>
+				<div class="equal-box">
+
+					<h2>More</h2>
+					<a href="#">destination</a>
+					<a href="#">venue</a>
+					<a href="#">trip</a>
+
+				</div>
+				<div class="wide-box">
+
+					<div class="social-media-icon">
+
+						<a href="#">
+							<img src="../images/social_media/icons8-facebook.svg" alt="">
+						</a>
+
+						<a href="#">
+							<img src="../images/social_media/icons8-twitter.svg" alt="">
+						</a>
+
+						<a href="#">
+							<img src="../images/social_media/icons8-instagram.svg" alt="">
+						</a>
+
+
+						<a href="#">
+							<img src="../images/social_media/icons8-youtube.svg" alt="">
+						</a>
+
+						<a href="#">
+							<img src="../images/social_media/icons8-linkedin-circled.svg" alt="">
+						</a>
+
+					</div>
+
+					<p>we are present on these platform.</p>
+
+				</div>
+			</div>
+			<div class="footer2" style="margin-bottom: 1rem;">
+				Copyright © 2022 vishal kumar . All Right Reserved .
+			</div>
+		</div>
+	</footer>
+
+
+
+	<!-- JavaScript video js-->
+	<script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
+	<!-- <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+
+	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule="" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

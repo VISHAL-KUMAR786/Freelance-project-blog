@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Home Page</title>
+
+	<link rel="shortcut icon" href="../images/sunny-outline.svg" type="image/x-icon">
+
+	<!-- css file -->
+	<link rel="stylesheet" href="./design/index.css">
+	<link rel="stylesheet" href="./design/home.css">
+
+	<!-- cdn -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+		integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+	<!-- video js -->
+	<link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet" />
+
+	<!-- CSS flikity cdn -->
+	<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
+	<!-- fontawesome cdn -->
+	<script src="https://kit.fontawesome.com/162dba6519.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+
+	<!-- social media icon -->
+
+	<div class="social__media_icon">
+
+		<div>
+			<a href="https://github.com/vishal-kumar786">
+				<img src="./images/social_media/icons8-facebook.svg" alt="">
+			</a>
+		</div>
+
+		<div>
+			<a href="https://github.com/vishal-kumar786">
+				<img src="./images/social_media/icons8-instagram.svg" alt="">
+			</a>
+		</div>
+
+		<div>
+			<a href="https://github.com/vishal-kumar786">
+				<img src="./images/social_media/icons8-linkedin-circled.svg" alt="">
+			</a>
+		</div>
+		<div>
+			<a href="https://github.com/vishal-kumar786">
+				<img src="./images/social_media/icons8-twitter.svg" alt="">
+			</a>
+		</div>
+		<div>
+			<a href="https://github.com/vishal-kumar786">
+				<img src="./images/social_media/icons8-youtube.svg" alt="">
+			</a>
+		</div>
+
+	</div>
+
+	<!-- Header Section  -->
+
+	<Header>
+
+		<div class="header__wrapper">
+
+			<div class="logo__container">
+				<a href="/">
+					<img src="./images/logo.png" alt="">
+				</a>
+			</div>
+
+			<div class="content__container">
+				<div class="location__container">
+					<div class="location__logo">
+						<img src="./images/icons8-location-40.png" alt="">
+					</div>
+					<div class="location__content">
+						<small>13, Big Smart Str, 2nd Cross</small>
+						<p>Newyork, USA 1002.</p>
+					</div>
+				</div>
+
+				<div class="mail__container">
+					<div class="mail__logo">
+						<img src="./images/icons8-gmail-login-40.png" alt="">
+					</div>
+					<div class="mail__content">
+						<small>1-800-784-533 & 544</small>
+						<p>Machinery@Support.Com</p>
+					</div>
+				</div>
+
+				<div class="social__container">
+
+					<div>
+						<a href="https://github.com/vishal-kumar786">
+							<img src="./images/social_media/icons8-facebook.svg" alt="">
+						</a>
+					</div>
+
+					<div>
+						<a href="https://github.com/vishal-kumar786">
+							<img src="./images/social_media/icons8-instagram.svg" alt="">
+						</a>
+					</div>
+
+					<div>
+						<a href="https://github.com/vishal-kumar786">
+							<img src="./images/social_media/icons8-linkedin-circled.svg" alt="">
+						</a>
+					</div>
+					<div>
+						<a href="https://github.com/vishal-kumar786">
+							<img src="./images/social_media/icons8-twitter.svg" alt="">
+						</a>
+					</div>
+					<div>
+						<a href="https://github.com/vishal-kumar786">
+							<img src="./images/social_media/icons8-youtube.svg" alt="">
+						</a>
+					</div>
+
+				</div>
+
+
+			</div>
+
+		</div>
+
+	</Header>
+
+	<!-- shader -->
+	<div class="shader"></div>
+
+	<!-- Navbar section start here -->
+	<nav id="navbar" class="sticky">
+		<div class="menu-icon">
+			<span>
+				<img src="./images/icons8-menu.svg" alt="">
+			</span>
+		</div>
+		<a class="logo" href="./index.html">
+			<div class="logo">
+				CraneCare <span>.</span>
+			</div>
+		</a>
+		<div class="nav-items">
+			<li><a href="./index.html">Home</a></li>
+			<li><a href="./static/about.html">About</a></li>
+			<li><a href="./static/services.html">Service</a></li>
+			<li><a href="./static/industries.html">Industries</a></li>
+			<li><a href="./static/clients.html">Client</a></li>
+			<li><a href="./static/contact.html">Contact</a></li>
+		</div>
+	</nav>
+
+	<script>
+		const menuBtn = document.querySelector(".menu-icon span");
+		const hanburger = document.querySelectorAll('.menu-icon')[0];
+		const items = document.querySelector(".nav-items");
+		const form = document.querySelector("form");
+		const image = document.querySelector(".menu-icon span img");
+		const header = document.querySelector("Header")
+		const nav = document.querySelector("nav")
+
+		let counter = 0;
+
+		menuBtn.onclick = () => {
+			items.classList.toggle("active");
+			hanburger.classList.toggle("close");
+
+			const attr = document.createAttribute("src");
+
+			counter += 1;
+			if (counter % 2 == 1) {
+				attr.value = "./images/icons8-multiply-40.png"
+				// console.log(h);
+				header.style.display = "none"
+				nav.style.position = 'fixed'
+				nav.style.top = '0%'
+				nav.style.left = '0%'
+
+			}
+			else {
+				attr.value = `./images/icons8-menu.svg`
+				header.style.display = "block"
+				nav.style.position = 'sticky'
+			}
+
+			image.setAttributeNode(attr)
+		}
+
+		window.onscroll = function () {
+			myFunction()
+		};
+
+		var navbar = document.getElementById("navbar");
+		var sticky = navbar.offsetTop;
+
+		function myFunction() {
+			if (window.pageYOffset >= sticky) {
+				navbar.classList.add("sticky")
+			} else {
+				navbar.classList.remove("sticky");
+			}
+		}
+	</script>
+
+	<!-- slideshow section  -->
+	<div class="main-carousel">
+		<div class="carousel__container">
+			<div>
+
+				<h3>Industry materials for</h3>
+				<h1>Machinery</h1>
+				<p>Over 24 years experience and knowledge international standards,
+					technologicaly changes and industrial systems.
+				</p>
+
+				<div class="button__container">
+					<a href="#">
+						<button class="button-24">Read More</button>
+					</a>
+					<a href="#">
+						<button class="button-23">Market Sector</button>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="carousel">
+			<div class="items">
+				<img style="transform: scaleX(-1);" src="./images/banner/banner-1-1.jpg" alt=""
+					class="carousel-image current">
+				<img src="./images/banner/banner-1-2.jpg" alt="" class="carousel-image" />
+				<img style="transform: scaleX(-1);" src="./images/banner/banner-1-3.jpg" alt=""
+					class="carousel-image" />
+			</div>
+		</div>
+
+		<div class="buttons">
+			<i class="fas fa-chevron-left fa-3x" id="prevBtn"></i>
+			<i class="fas fa-chevron-right fa-3x" id="nextBtn"></i>
+		</div>
+		<div class="nav-dots">
+			<div class="dot active"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+		</div>
+	</div>
+
+	<script>
+		// ============================== Carousel slider =====================================
+
+		const images = document.querySelectorAll(".carousel-image");
+		const dots = document.querySelectorAll(".dot");
+		const prevBtn = document.querySelector("#prevBtn");
+		const nextBtn = document.querySelector("#nextBtn");
+
+		const nextSlide = () => {
+			const currentSlide = document.querySelector(".current");
+			currentSlide.classList.remove("current");
+			if (currentSlide.nextElementSibling) {
+				currentSlide.nextElementSibling.classList.add("current");
+			} else {
+				images[0].classList.add("current");
+			}
+
+			dotsNextSlide();
+		};
+
+		const prevSlide = () => {
+			const currentSlide = document.querySelector(".current");
+			currentSlide.classList.remove("current");
+			if (currentSlide.previousElementSibling) {
+				currentSlide.previousElementSibling.classList.add("current");
+			} else {
+				images[images.length - 1].classList.add("current");
+			}
+
+			dotsPrevSlide();
+		};
+
+		nextBtn.addEventListener("click", k => {
+			nextSlide();
+		});
+
+		prevBtn.addEventListener("click", k => {
+			prevSlide();
+		});
+
+		setInterval(() => {
+			nextBtn.click();
+		}, 6000);
+
+		// =================== Dots ===========================
+		const dotsNextSlide = () => {
+			const dotActive = document.querySelector(".active");
+
+			dotActive.classList.remove("active");
+			if (dotActive.nextElementSibling) {
+				dotActive.nextElementSibling.classList.add("active");
+			} else {
+				dots[0].classList.add("active");
+			}
+			dotActive.classList.remove("active");
+		};
+
+		const dotsPrevSlide = () => {
+			const dotActive = document.querySelector(".active");
+
+			dotActive.classList.remove("active");
+			if (dotActive.previousElementSibling) {
+				dotActive.previousElementSibling.classList.add("active");
+			} else {
+				dots[dots.length - 1].classList.add("active");
+			}
+			dotActive.classList.remove("active");
+		};
+
+		const dotJump = () => {
+			dots.forEach((dot, index) => {
+				dot.addEventListener("click", () => {
+					const dotActive = document.querySelector(".active");
+					dotActive.classList.remove("active");
+					dot.classList.add("active");
+
+					const imageTarget = images[index];
+					const currentSlide = document.querySelector(".current");
+
+					currentSlide.classList.remove("current");
+					imageTarget.classList.add("current");
+				});
+			});
+		};
+		dotJump();
+	</script>
+
+	<!-- small about section  -->
+	<div class="small_about_section">
+		<div class="small_about_section__wrapper">
+
+			<div class="about_small_image_content">
+				<small>About Us</small>
+				<h1>Cranecare Private Limited, Your Eot Crane Experts</h1>
+				<p>As one of the most reputable crane companies in India, we have years of experience in providing
+					professional and reliable EOT Crane Repair, EOT Crane Maintenance Services, EOT Crane Spares,
+					Overhead Crane and Hoist EOT Crane services. We also constantly invest in our equipment and training
+					to ensure that we are at the forefront of EOT crane services in India. By continually adapting to
+					the ever-changing industry, our crane engineers apply their years of knowledge and know-how to
+					implement pioneering EOT crane Repair and services.</p>
+
+				<p>This expertise and experience is what stands us apart from our competitors. Whether you need EOT
+					Crane Repair & Maintenance, hoist repairs, EOT Crane Modifications, or Rejunuvate your old EOT
+					cranes, we’ve got you covered. To maintain this level of service for our customers, we always aim to
+					succeed our competitors by having a range of EOT Crane spare parts for a broad range of cranes and
+					we also have a diverse selection of hoists, from 250kg to 5,000kg.</p>
+
+				<a href="#">
+					<button class="button-62">
+						<span>
+							Read More
+						</span>
+					</button>
+				</a>
+			</div>
+
+			<div class="about_small_image_container">
+				<div class="center_small_about">
+					<img src="./images/about/about-1-1.jpg" alt="">
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+	<!-- small service section  -->
+
+	<div class="small_service_section">
+		<div class="small_service__wrapper">
+
+			<div class="service_heading">
+				<small>
+					Our Service
+				</small>
+			</div>
+
+			<div class="service_heading">
+				<h1>
+					Our Market Stocks
+				</h1>
+			</div>
+
+			<div class="carousel custom-service-carousel" data-flickity='{"lazyLoad": true ,"autoPlay": 2500,
+			"pauseAutoPlayOnHover": false, "wrapAround": true }'>
+
+				<a href="#">
+					<div class="carousel-cell">
+
+						<div style="background-image: url(../images/small_service/service-3.jpg);" class="service_card">
+							<div class="service_content">
+								<p>Railway Infastructure
+								</p>
+							</div>
+						</div>
+
+					</div>
+				</a>
+
+				<a href="#">
+					<div class="carousel-cell">
+						<div style="background-image: url(../images/small_service/service-2.jpg);" class="service_card">
+							<div class="service_content">
+								<p>
+									construction Prodcuts
+								</p>
+							</div>
+						</div>
+
+					</div>
+				</a>
+
+				<a href="#">
+					<div class="carousel-cell">
+						<div style="background-image: url(../images/small_service/service-3.jpg);" class="service_card">
+							<div class="service_content">
+								<p>
+									Aero Space Service
+								</p>
+							</div>
+						</div>
+
+					</div>
+				</a>
+
+				<a href="#">
+					<div class="carousel-cell">
+
+						<div style="background-image: url(../images/small_service/service-3.jpg);" class="service_card">
+							<div class="service_content">
+								<p>Railway Infastructure
+								</p>
+							</div>
+						</div>
+
+					</div>
+				</a>
+
+				<a href="#">
+					<div class="carousel-cell">
+
+						<div style="background-image: url(../images/small_service/service-3.jpg);" class="service_card">
+							<div class="service_content">
+								<p>construction Prodcuts
+								</p>
+							</div>
+						</div>
+
+					</div>
+				</a>
+
+				<a href="#">
+					<div class="carousel-cell">
+						<div style="background-image: url(../images/small_service/service-2.jpg);" class="service_card">
+							<div class="service_content">
+								<p>Aero Space Service
+								</p>
+							</div>
+						</div>
+
+					</div>
+				</a>
+
+			</div>
+
+			<div class="service_heading">
+				<p>Since 1964, We provide best solutions for our valuable customers.</p>
+			</div>
+			<div class="service_heading">
+				<div class="mail__to">
+					<img src="./images/icons8-secured-letter-40.png" alt="">
+					<p>
+						Getaquote@Machinery.com
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- news & letter section  -->
+
+	<div class="new_letter_section">
+		<div class="new_letter__wrapper">
+
+			<div class="center-text">
+				<h1>New & Letter</h1>
+			</div>
+			<div class="carousel" data-flickity='{"autoPlay": true, "groupCells": true,"autoPlay": true, "lazyLoad": true ,"autoPlay": 4500,
+				"pauseAutoPlayOnHover": false, "wrapAround": true }'>
+
+				<a href="">
+					<div class="carousel-cell">
+						<div class="new_card" style="background-image: url(./images/news_letter/project-1.jpg);">
+							<div class="content">
+								<h1>Rail Engine Manufacture</h1>
+								<p>construction</p>
+							</div>
+						</div>
+					</div>
+				</a>
+
+				<a href="">
+					<div class="carousel-cell">
+						<div class="new_card" style="background-image: url(./images/news_letter/project-2.jpg);">
+							<div class="content">
+								<h1>Generate Natural Power</h1>
+								<p>Power & Energy</p>
+							</div>
+						</div>
+					</div>
+				</a>
+
+				<a href="#">
+					<div class="carousel-cell">
+						<div class="new_card" style="background-image: url(./images/news_letter/project-3.jpg);">
+							<div class="content">
+								<h1>Rail Engine Manufacture</h1>
+								<p>Engineering</p>
+							</div>
+						</div>
+					</div>
+				</a>
+
+				<a href="#">
+					<div class="carousel-cell">
+						<div class="new_card" style="background-image: url(./images/news_letter/project-1.jpg);">
+							<div class="content">
+								<h1>Rail Engine Manufacture</h1>
+								<p>construction</p>
+							</div>
+						</div>
+					</div>
+				</a>
+				<a href="#">
+					<div class="carousel-cell">
+						<div class="new_card" style="background-image: url(./images/news_letter/project-2.jpg);">
+							<div class="content">
+								<h1>Generate Natural Power</h1>
+								<p>Power & Energy</p>
+							</div>
+						</div>
+					</div>
+				</a>
+				<a href="#">
+					<div class="carousel-cell">
+						<div class="new_card" style="background-image: url(./images/news_letter/project-3.jpg);">
+							<div class="content">
+								<h1>Rail Engine Manufacture</h1>
+								<p>Engineering</p>
+							</div>
+						</div>
+					</div>
+				</a>
+
+			</div>
+		</div>
+	</div>
+
+
+	<!-- small experience section  -->
+	<div class="fun_fact_experience_section">
+		<div class="fun_fact_experience__wrapper">
+
+			<div class="content1">
+
+				<small>FUN FACTS
+					<span></span>
+				</small>
+				<h1>What We Achieved?</h1>
+
+				<p class="small-service">Strength and growth comes only through continuous effort & struggle.</p>
+
+				<div class="achivements">
+					<img src="./images/icons8-india-96.png" alt="">
+					<div class="count">500 <sup>+</sup></div>
+					<button class="button-87">
+						Branches All Over India
+					</button>
+				</div>
+
+				<p class="simple-text">
+					Over 148+ branches indignation & dislike men who beguiled demoralized
+					by the charms of pleasure of the moment, so blinded by desire, that they
+					cannot foresee the pain and over all trouble.
+				</p>
+
+				<button href="#" class="button-75 arrow">
+					Locate Our Branches
+					</butt>
+			</div>
+
+			<div class="content2">
+				<video id="my-video" class="video-js" controls preload="auto" poster="./images/video-img.jpg"
+					data-setup="{}" width="700px" height="500px">
+					<source src="https://youtu.be/ubUIbCCX6XE" type="video/mp4" />
+					<source src="https://youtu.be/ubUIbCCX6XE" type="video/webm" />
+					<p class="vjs-no-js">
+						To view this video please enable JavaScript, and consider upgrading to a
+						web browser that
+						<a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+					</p>
+				</video>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- customer section  -->
+	<div class="small_customer_section">
+		<div class="small_customer_section__wrappper">
+			<h1 class="customer__heading">Our Customer</h1>
+			<div class="carousel" data-flickity='{ "groupCells": true,"autoPlay": true, "lazyLoad": true ,"autoPlay": 2500,
+			"pauseAutoPlayOnHover": false, "wrapAround": true }'>
+				<div class="carousel-cell">
+					<img src="./images/client/client-1.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-10.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-12.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-11.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-13.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-14.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-15.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-16.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-17.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-18.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-19.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-2.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-21.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-22.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-23.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-24.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-25.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-26.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-27.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-28.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-29.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-3.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-30.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-20.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-31.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-32.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-33.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-34.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-35.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-36.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-37.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-38.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-39.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-39.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-4.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-40.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-41.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-42.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-43.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-44.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-45.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-46.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-47.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-48.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-49.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-5.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-50.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-51.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-52.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-53.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-54.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-55.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-56.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-57.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-58.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-59.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-6.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-60.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-61.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-62.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-63.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-64.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-65.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-66.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-67.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-68.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-69.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-7.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-70.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-71.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-72.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-73.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-74.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-75.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-76.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-77.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-78.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-79.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-8.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-80.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-81.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-82.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-83.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-84.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-85.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-86.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-87.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-88.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-89.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-9.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-90.jpg" alt="">
+				</div>
+				<div class="carousel-cell">
+					<img src="./images/client/client-91.jpg" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- footer section  -->
+	<footer>
+		<div class="footer-wrapper">
+			<div class="footer1">
+				<div class="wide-box">
+
+					<div class="logo">
+						<a href="#">
+							CraneCare<span style="color: #ff3d00;">.</span>
+						</a>
+					</div>
+
+					<a href="#">
+						<p>© 2022 Care.</p>
+						<p>All Rights Reserved</p>
+					</a>
+
+				</div>
+				<div class="equal-box">
+					<h2>Company</h2>
+					<a href="#">Home</a>
+					<a href="#">About</a>
+					<a href="#">Service</a>
+					<a href="#">Industries</a>
+					<a href="#">Client</a>
+					<a href="#">Contact</a>
+					<a href="#">help</a>
+				</div>
+				<div class="equal-box">
+					<h2>Contact</h2>
+					<a href="#">4967 Sardis Sta,</a>
+					<a href="#">Victoria 8007, Montreal.</a>
+					<a href="#">support@artstudio.com</a>
+				</div>
+				<div class="equal-box">
+
+					<h2>More</h2>
+					<a href="#">destination</a>
+					<a href="#">venue</a>
+					<a href="#">trip</a>
+
+				</div>
+				<div class="wide-box">
+
+					<div class="social-media-icon">
+
+						<a href="#">
+							<img src="./images/social_media/icons8-facebook.svg" alt="">
+						</a>
+
+						<a href="#">
+							<img src="./images/social_media/icons8-twitter.svg" alt="">
+						</a>
+
+						<a href="#">
+							<img src="./images/social_media/icons8-instagram.svg" alt="">
+						</a>
+
+
+						<a href="#">
+							<img src="./images/social_media/icons8-youtube.svg" alt="">
+						</a>
+
+						<a href="#">
+							<img src="./images/social_media/icons8-linkedin-circled.svg" alt="">
+						</a>
+
+					</div>
+
+					<p>we are present on these platform.</p>
+
+				</div>
+			</div>
+			<div class="footer2" style="margin-bottom: 1rem;">
+				Copyright © 2022 vishal kumar . All Right Reserved .
+			</div>
+		</div>
+	</footer>
+
+
+	<!-- JavaScript video js-->
+	<script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
+	<!-- <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+</body>
+
+</html>
